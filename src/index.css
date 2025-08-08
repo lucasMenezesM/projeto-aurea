@@ -7,12 +7,48 @@
   background-color: rgb(0, 0, 0);
 }
 
+.text-primary {
+  color: rgb(0, 0, 0);
+}
+
+.hover-text-primary {
+  &:hover {
+    color: rgb(0, 0, 0);
+  }
+}
+
 .background-secondary {
   background-color: rgb(219, 184, 38);
 }
 
+.text-secondary {
+  color: rgb(219, 184, 38);
+}
+
+.hover-text-secondary {
+  &:hover {
+    color: rgb(219, 184, 38);
+  }
+}
+
 .background-tertiary {
-  background-color: rgb(14, 14, 14);
+  background-color: rgb(85, 0, 143);
+}
+
+.text-tertiary {
+  color: rgb(85, 0, 143);
+}
+
+.hover-text-tertiary {
+  &:hover {
+    color: rgb(85, 0, 143);
+  }
+}
+
+.hover-text-white {
+  &:hover {
+    color: rgb(255, 255, 255);
+  }
 }
 
 /* :root {
