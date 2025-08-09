@@ -3,51 +3,105 @@
 
 @custom-variant dark (&:is(.dark *));
 
+:root {
+  /* font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; */
+
+  --var-primary-color: rgb(0, 0, 0);
+  --var-secondary-color: rgb(219, 184, 38);
+  --var-tertiary-color: rgb(85, 0, 143);
+}
+
+* {
+  font-family: sans-serif;
+}
+
 .background-primary {
-  background-color: rgb(0, 0, 0);
+  background-color: var(--var-primary-color);
 }
 
 .text-primary {
-  color: rgb(0, 0, 0);
+  color: var(--var-primary-color);
 }
 
 .hover-text-primary {
   &:hover {
-    color: rgb(0, 0, 0);
+    color: var(--var-primary-color);
   }
 }
 
 .background-secondary {
-  background-color: rgb(219, 184, 38);
+  background-color: var(--var-secondary-color);
 }
 
 .text-secondary {
-  color: rgb(219, 184, 38);
+  color: var(--var-secondary-color);
 }
 
 .hover-text-secondary {
   &:hover {
-    color: rgb(219, 184, 38);
+    color: var(--var-secondary-color);
   }
 }
 
 .background-tertiary {
-  background-color: rgb(85, 0, 143);
+  background-color: var(--var-tertiary-color);
 }
 
 .text-tertiary {
-  color: rgb(85, 0, 143);
+  color: var(--var-tertiary-color);
 }
 
 .hover-text-tertiary {
   &:hover {
-    color: rgb(85, 0, 143);
+    color: var(--var-tertiary-color);
   }
 }
 
 .hover-text-white {
   &:hover {
     color: rgb(255, 255, 255);
+  }
+}
+.background-banner {
+  border: none;
+  margin: 0;
+  background: linear-gradient(60deg, var(--var-secondary-color) 0%, var(--var-primary-color) 50%);
+}
+
+.primary-button {
+  background-color: var(--var-primary-color);
+  color: white;
+
+  &:hover {
+    background-color: var(--var-secondary-color);
+  }
+}
+
+.secondary-button {
+  background-color: var(--var-secondary-color);
+
+  &:hover {
+    background-color: var(--var-primary-color);
+  }
+}
+
+.tertiary-button {
+  background-color: var(--var-tertiary-color);
+
+  &:hover {
+    background-color: var(--var-secondary-color);
+    color: black;
   }
 }
 
