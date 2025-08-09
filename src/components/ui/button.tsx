@@ -19,6 +19,7 @@ const buttonVariants = cva(
         secondary:
           "bg-[#dbb826] text-secondary-foreground shadow-xs hover:bg-[#0e0e0e] hover:text-white cursor-pointer",
         primary: "bg-[#0e0e0e] text-white hover:bg-[#dbb826] cursor-pointer",
+        tertiary: "bg-[#55008f] text-white hover:bg-[#dbb826] hover:text-black cursor-pointer",
       },
       size: {
         default: "h-9 px-4 py-2 has-[>svg]:px-3",
