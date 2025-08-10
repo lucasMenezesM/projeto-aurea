@@ -9,7 +9,7 @@ import { Menu } from "lucide-react";
 export function Navbar() {
   return (
     <header className="w-full border-b shadow-sm px-4 py-2 background-primary border-none">
-      <div className="max-w-6xl mx-auto flex items-center justify-between">
+      <div className="max-w-6xl mx-auto flex items-center justify-between border-none">
         {/* Logo */}
         <a href="/">
           <img src="/src/assets/images/Prancheta 4.png" alt="Logo" className="h-18" />
