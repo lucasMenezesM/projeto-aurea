@@ -7,7 +7,7 @@ import ContatoDialog from "@/pages/shared/components/ContatoDialog";
 const BannerHomePAge: React.FC = () => {
   return (
     // <div className="banner-home-page grid grid-cols-1 lg:grid-cols-2 justify-items-center border-none items-center bg-gradient-to-br from-black via-black to-[#55008f] py-10 pb-10">
-    <div className="banner-home-page flex flex-wrap justify-center border-none items-center bg-gradient-to-br from-black via-black to-[#55008f] py-10 pb-10">
+    <div className="banner-home-page flex flex-wrap justify-center border-none items-center bg-gradient-to-br from-black via-black to-[#55008f] pt-10">
       <motion.div
         layout
         className="conteudo-banner w-full md:w-160 text-center md:text-left p-8 flex flex-col "
