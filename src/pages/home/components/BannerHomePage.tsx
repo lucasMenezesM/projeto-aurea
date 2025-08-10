@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Headset, Info } from "lucide-react";
 import { Link } from "react-router-dom";
 import { AnimatePresence, motion, MotionConfig } from "motion/react";
+import ContatoDialog from "@/pages/shared/components/ContatoDialog";
 
 const BannerHomePAge: React.FC = () => {
   return (
@@ -31,17 +32,19 @@ const BannerHomePAge: React.FC = () => {
 
         <div className="banner-opcoes flex flex-wrap gap-4 justify-center md:justify-start">
           <MotionConfig>
-            <motion.button
+            <motion.div
               initial={{ opacity: 0, x: -100 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, ease: "easeInOut" }}
               whileHover={{ scale: 1.05, transition: { duration: 0.4 } }}
               whileTap={{ rotate: 3, scale: 0.98, transition: { duration: 0.2 } }}
             >
-              <Button variant={"tertiary"}>
-                <Headset /> Entre em contato!
-              </Button>
-            </motion.button>
+              <ContatoDialog>
+                <Button variant={"tertiary"}>
+                  <Headset /> Entre em contato!
+                </Button>
+              </ContatoDialog>
+            </motion.div>
             <motion.button
               initial={{ opacity: 0, x: -100 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -60,8 +63,9 @@ const BannerHomePAge: React.FC = () => {
       </motion.div>
       <AnimatePresence mode="wait">
         <motion.div
-          initial={{ opacity: 0, y: -150, rotate: "330deg" }}
+          initial={{ opacity: 0, y: -150, rotate: "320deg" }}
           // animate={{ opacity: 1, y: 0, rotate: "340deg" }}
+          animate={{ opacity: 1, y: 0, rotate: "360deg" }}
           whileInView={{ opacity: 1, y: 0, rotate: "360deg" }}
           transition={{ duration: 0.9, ease: "easeInOut" }}
           className="logo"

@@ -6,6 +6,7 @@ interface Props {
   className?: string;
   slideColor?: string;
   width?: string;
+  duracao?: number;
 }
 
 const Reveal: React.FC<Props> = ({
@@ -13,6 +14,7 @@ const Reveal: React.FC<Props> = ({
   className,
   slideColor = "#55008f",
   width = "w-full",
+  duracao = 0.5,
 }: Props) => {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true });
@@ -33,7 +35,7 @@ const Reveal: React.FC<Props> = ({
         variants={{ hidden: { opacity: 0, x: -100 }, visible: { opacity: 1, x: 0 } }}
         initial="hidden"
         animate={mainAnimation}
-        transition={{ duration: 0.5, delay: 0.25 }}
+        transition={{ duration: duracao, delay: 0.25 }}
         className="text-center"
       >
         {children}
@@ -42,7 +44,7 @@ const Reveal: React.FC<Props> = ({
         variants={{ hidden: { left: 0 }, visible: { left: "100%" } }}
         initial="hidden"
         animate={slideAnimation}
-        transition={{ duration: 0.5, ease: "easeInOut" }}
+        transition={{ duration: duracao, ease: "easeInOut" }}
         style={{
           position: "absolute",
           top: 4,

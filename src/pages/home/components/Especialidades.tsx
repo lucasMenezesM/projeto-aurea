@@ -12,6 +12,7 @@ import { Badge } from "@/components/ui/badge";
 import { motion, useAnimation, useInView } from "motion/react";
 import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
+import ContatoDialog from "@/pages/shared/components/ContatoDialog";
 
 const Especialidades: React.FC = () => {
   const badge1Animation = useAnimation();
@@ -61,7 +62,7 @@ const Especialidades: React.FC = () => {
           <motion.div
             variants={{
               visible: { opacity: 1, x: 0 },
-              hidden: { opacity: 0, x: 100 },
+              hidden: { opacity: 0, x: -100 },
             }}
             initial="hidden"
             animate={badge2Animation}
@@ -107,7 +108,9 @@ const Especialidades: React.FC = () => {
         <h2 className="scroll-m-20 text-1xl font-semibold tracking-tight text-center mb-3">
           Se interessou? Entre em contato conosco!
         </h2>
-        <Button variant={"tertiary"}>Enviar mensagem</Button>
+        <ContatoDialog>
+          <Button variant={"tertiary"}>Enviar mensagem</Button>
+        </ContatoDialog>
       </div>
     </div>
   );
