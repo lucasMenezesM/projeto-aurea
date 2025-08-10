@@ -30,7 +30,7 @@ const Especialidades: React.FC = () => {
   }, [isInView, badge1Animation, badge2Animation]);
 
   return (
-    <div className="especialidades-container p-8 background-primary text-center bg-gradient-to-tr from-black via-black to-[#55008f] text-white">
+    <div className="especialidades-container p-8 background-primary text-center bg-gradient-to-tr from-black via-black to-[#55008f] text-white pb-35">
       <div className="w-full md:w-170 mx-auto">
         <Reveal className="mt-50">
           <h2 className="scroll-m-20 text-2xl font-semibold tracking-tight text-center">
@@ -104,7 +104,7 @@ const Especialidades: React.FC = () => {
         />
       </div>
 
-      <div className="mt-15 mb-50">
+      <div className="mt-15">
         <h2 className="scroll-m-20 text-1xl font-semibold tracking-tight text-center mb-3">
           Se interessou? Entre em contato conosco!
         </h2>
