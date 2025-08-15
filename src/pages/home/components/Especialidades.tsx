@@ -78,29 +78,31 @@ const Especialidades: React.FC = () => {
 
       <div className="flex flex-wrap justify-center gap-5 mt-10">
         <EspecialidadeBox
-          title="Soluções de negócio"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce in fringilla arcu. "
-          icon={<BriefcaseBusiness size={100} />}
-        />
-        <EspecialidadeBox
           title="Arquitetura e Urbanismo"
           description="Donec lacinia nisi ut blandit imperdiet. Nulla tempus eget augue non tempor. Mauris ac posuere erat, vel rutrum magna. "
-          icon={<HardHat size={100} />}
+          icon={<HardHat size={80} color="rgb(219, 184, 38)" />}
         />
         <EspecialidadeBox
           title="Desenvolvimento de tecnologias"
           description="Duis tellus odio, sagittis in erat in, scelerisque ornare est. "
-          icon={<Computer size={100} />}
+          icon={<Computer size={80} color="rgb(219, 184, 38)" />}
+        />
+        <EspecialidadeBox
+          title="Soluções de negócio"
+          description="Lorem ipsum dolor sit amet, consectetur adipiscing met, consectetur adipiscingmet, consectetur adipiscingmet, consectetur adipiscing"
+          icon={<BriefcaseBusiness size={80} color="rgb(219, 184, 38)" />}
         />
         <EspecialidadeBox
           title="Máquinas e Equipamentos"
-          description="Duis tellus odio, sagittis in erat in, scelerisque ornare est. "
-          icon={<Cpu size={100} />}
+          description="Duis tellus odio, sagittis in erat inmmet, consectetur adipiscingmet, consectetur adipiscingmet, consectetur adipiscingmet, consectetur adipiscinget, consectetur adipiscingmet, consectetur adipiscing met, consectetur adipiscingmet, consectetur adipiscing, scelerisque ornare est. "
+          icon={<Cpu size={80} color="rgb(219, 184, 38)" />}
         />
         <EspecialidadeBox
           title="Soluções Elétricas"
           description="Duis tellus odio, sagittis in erat in, scelerisque ornare est. "
-          icon={<CircuitBoard size={100} />}
+          icon={<CircuitBoard size={80} color="rgb(219, 184, 38)" />}
+          iconColor="rgb(219, 184, 38)" // cor do ícone
+          bgColor="#55008f" // cor do fundo original
         />
       </div>
 

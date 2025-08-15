@@ -1,17 +1,27 @@
 import Reveal from "@/pages/shared/components/Reveal";
 import { motion, useAnimation, useInView } from "motion/react";
-import { useEffect, useRef } from "react";
+import React from "react";
+import { useEffect, useRef, useState } from "react";
 
 interface Props {
   title: string;
   description: string;
-  img?: string;
-  icon: React.ReactNode;
+  icon: React.JSX.Element;
+  iconColor?: string;
+  bgColor?: string;
 }
-const EspecialidadeBox3: React.FC<Props> = ({ title, description, icon }) => {
+const EspecialidadeBox3: React.FC<Props> = ({
+  title,
+  description,
+  icon,
+  iconColor = "rgb(219, 184, 38)",
+  bgColor = "#55008f",
+}) => {
   const iconAnimation = useAnimation();
   const iconRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(iconRef, { once: true });
+
+  const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
     if (isInView) {
@@ -20,27 +30,45 @@ const EspecialidadeBox3: React.FC<Props> = ({ title, description, icon }) => {
   }, [isInView, iconAnimation]);
 
   return (
-    <div className="especialidade-box flex flex-wrap md:flex-nowrap w-full md:w-120 items-center background-secondary p-2 rounded-lg text-black justify-center shadow-[0_9px_50px_1px_rgba(128,0,255,0.3)]">
-      <motion.div
-        className=""
-        initial={{ opacity: 0 }}
-        animate={iconAnimation}
-        transition={{ duration: 1.3, ease: "easeInOut" }}
-        ref={iconRef}
+    // <div className="especialidade-box flex flex-wrap md:flex-nowrap w-full md:w-120 items-center background-secondary p-2 rounded-lg text-black justify-center shadow-[0_9px_50px_1px_rgba(128,0,255,0.3)]">
+    <div className="especialidade-box flex flex-wrap sm:grid grid-cols-4 md:flex-nowrap w-full md:w-120 items-center  p-2 rounded-lg text-black justify-center">
+      <div
+        className="relative overflow-hidden p-4 rounded-lg flex flex-col items-center gap-2 w-25 col-span-1"
+        style={{ backgroundColor: bgColor }}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
       >
-        {icon}
-      </motion.div>
-      <div className="flex flex-col items-center p-5">
+        {/* Camada que desliza para mudar a cor */}
+        <motion.div
+          className="absolute inset-0"
+          style={{ backgroundColor: iconColor }}
+          initial={{ x: "-100%" }}
+          animate={{ x: isHovered ? "0%" : "-100%" }}
+          transition={{ duration: 0.4, ease: "easeInOut" }}
+        />
+
+        {/* Conteúdo acima da camada */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
+          whileHover={{ scale: 1.15, transition: { duration: 0.5 } }}
+          className="relative z-10 flex flex-col items-center gap-2"
+        >
+          {React.cloneElement(icon, {
+            color: isHovered ? bgColor : iconColor,
+            size: 80,
+          })}
+        </motion.div>
+      </div>
+      <div className="flex flex-col items-center p-5 w-full col-span-3">
         <Reveal>
-          <h3 className="text-xl font-semibold text-tertiary shadow-lg">{title}</h3>
+          <h3 className="text-xl font-semibold text-tertiary shadow-lg md:text-start">{title}</h3>
         </Reveal>
         <Reveal>
-          <p className="mt-2">{description}</p>
+          <p className="mt-2 text-white md:text-start">{description}</p>
         </Reveal>
       </div>
-      {/* <Button className="absolute bottom-1 h-5 right-1 w-16 cursor-pointer text-xs">
-        Saiba mais
-      </Button> */}
     </div>
   );
 };
