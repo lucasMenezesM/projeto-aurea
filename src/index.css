@@ -54,6 +54,12 @@
   }
 }
 
+.hover-background-secondary {
+  &:hover {
+    background-color: var(--var-secondary-color);
+  }
+}
+
 .background-tertiary {
   background-color: var(--var-tertiary-color);
 }
