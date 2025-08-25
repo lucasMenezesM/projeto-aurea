@@ -1,6 +1,8 @@
 import { motion } from "motion/react";
-import CarouselProjetos from "./CarouselProjetos";
+// import CarouselProjetos from "./CarouselProjetos";
 import type { Projeto } from "@/data/projetos";
+// import Carousel from "./../../shared/components/Carousel";
+import CarouselProjetos from "./CarouselProjetos";
 
 interface ExibicaoProjetosProps {
   titulo: string;

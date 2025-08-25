@@ -1,46 +1,36 @@
-import { Button } from "@/components/ui/button";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
-import { DialogClose } from "@radix-ui/react-dialog";
+import React from "react";
+import Diferenciais from "./components/Diferenciais";
+import HeroSobre from "./components/Hero";
+import MVV from "./components/MVV";
+import LinhaDoTempo from "./components/LinhaDoTempo";
+import Contato from "./components/Contato";
 
 const Sobre: React.FC = () => {
   return (
-    <div>
-      <h1 className="text-9xl font-bold underline text-blue-800">Sobre</h1>
-      <Button className="" variant={"primary"} size="lg">
-        Home
-      </Button>
+    <div className="relative overflow-hidden background-primary text-white">
+      {/* Background decorativo */}
+      <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
+        <div className="absolute -top-24 -left-24 h-80 w-80 rounded-full bg-indigo-600/30 blur-3xl" />
+        <div className="absolute -bottom-24 -right-24 h-80 w-80 rounded-full bg-emerald-600/30 blur-3xl" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/40" />
+      </div>
 
-      <Dialog>
-        <DialogTrigger>
-          <Button variant="primary" size="lg">
-            Abrir Modal
-          </Button>
-        </DialogTrigger>
-        <DialogContent className="background-tertiary text-white border-none">
-          <DialogHeader>
-            <DialogTitle>Titulo do modal?</DialogTitle>
-            <DialogDescription className="text-gray-300">Teste de descrição</DialogDescription>
-          </DialogHeader>
-          <div className="flex">
-            <Button variant="destructive" size="lg">
-              Excluir
-            </Button>
-          </div>
-          <DialogFooter>
-            <DialogClose asChild>
-              <Button variant="destructive">Cancelar</Button>
-            </DialogClose>
-          </DialogFooter>
-        </DialogContent>
-      </Dialog>
+      <main className="px-6 py-20 md:py-28 max-w-7xl mx-auto">
+        {/* HERO */}
+        <HeroSobre />
+
+        {/* MISSÃO VISÃO VALORES */}
+        <MVV />
+
+        {/* DIFERENCIAIS */}
+        <Diferenciais />
+
+        {/* PROCESSO (Linha do tempo) */}
+        <LinhaDoTempo />
+
+        {/* STRIP DE PROVAS SOCIAIS / CHAMADA */}
+        <Contato />
+      </main>
     </div>
   );
 };
