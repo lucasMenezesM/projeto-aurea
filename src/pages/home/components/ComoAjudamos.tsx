@@ -1,36 +1,8 @@
 import CardGradient from "@/pages/sobre/components/CardGradient";
 import { motion } from "motion/react";
 import Badge from "@/pages/shared/components/Badge";
-import { Users, Sparkles, Shield, LineChart } from "lucide-react";
 
-interface Beneficio {
-  titulo: string;
-  descricao: string;
-  icone: React.ComponentType<React.SVGProps<SVGSVGElement>>;
-}
-
-const beneficios: Beneficio[] = [
-  {
-    titulo: "Equipe Multidisciplinar",
-    descricao: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    icone: Users,
-  },
-  {
-    titulo: "Projetos Personalizados",
-    descricao: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    icone: Sparkles,
-  },
-  {
-    titulo: "Qualidade & Segurança",
-    descricao: "Ut enim ad minim veniam, quis nostrud exercitation.",
-    icone: Shield,
-  },
-  {
-    titulo: "Foco em Resultados",
-    descricao: "Duis aute irure dolor in reprehenderit in voluptate.",
-    icone: LineChart,
-  },
-];
+import { beneficios } from "../data/dados";
 
 const ComoAjudamos: React.FC = () => {
   return (
