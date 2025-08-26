@@ -1,13 +1,10 @@
-import { Button } from "@/components/ui/button";
-import { Headset, Info } from "lucide-react";
-import { Link } from "react-router-dom";
-import { AnimatePresence, motion, MotionConfig } from "motion/react";
-import ContatoDialog from "@/pages/shared/components/ContatoDialog";
+import { AnimatePresence, motion } from "motion/react";
+import { ChevronRight } from "lucide-react";
 
 const BannerHomePAge: React.FC = () => {
   return (
     // <div className="banner-home-page grid grid-cols-1 lg:grid-cols-2 justify-items-center border-none items-center bg-gradient-to-br from-black via-black to-[#55008f] py-10 pb-10">
-    <div className="banner-home-page flex flex-wrap justify-center border-none items-center bg-gradient-to-br from-black via-black to-[#55008f] pt-10">
+    <section className="banner-home-page flex flex-wrap justify-center border-none items-center bg-gradient-to-br from-black via-black to-[#55008f] pt-10 pb-30">
       <motion.div
         layout
         className="conteudo-banner w-full md:w-160 text-center md:text-left p-8 flex flex-col "
@@ -30,36 +27,30 @@ const BannerHomePAge: React.FC = () => {
           de alta qualidade.
         </motion.h4>
 
-        <div className="banner-opcoes flex flex-wrap gap-4 justify-center md:justify-start">
-          <MotionConfig>
-            <motion.div
-              initial={{ opacity: 0, x: -100 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, ease: "easeInOut" }}
-              whileHover={{ scale: 1.05, transition: { duration: 0.4 } }}
-              whileTap={{ rotate: 3, scale: 0.98, transition: { duration: 0.2 } }}
-            >
-              <ContatoDialog>
-                <Button variant={"tertiary"}>
-                  <Headset /> Entre em contato!
-                </Button>
-              </ContatoDialog>
-            </motion.div>
-            <motion.button
-              initial={{ opacity: 0, x: -100 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, ease: "easeInOut" }}
-              whileHover={{ scale: 1.05, transition: { duration: 0.4 } }}
-              whileTap={{ rotate: 3, scale: 0.98, transition: { duration: 0.2 } }}
-            >
-              <Button asChild variant={"tertiary"} className="">
-                <Link to="/sobre">
-                  <Info /> Saiba mais sobre nós
-                </Link>
-              </Button>
-            </motion.button>
-          </MotionConfig>
-        </div>
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
+          className="mt-8 flex flex-wrap items-center gap-3"
+        >
+          <motion.a
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            href="#servicos"
+            className="inline-flex items-center justify-center rounded-xl px-5 py-3 font-medium border border-white/10 bg-white/10 hover:bg-white/20 backdrop-blur-sm transition"
+          >
+            Nossos Serviços
+            <ChevronRight className="ml-1.5 h-4 w-4" />
+          </motion.a>
+          <motion.a
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            href="/contato"
+            className="inline-flex items-center justify-center rounded-xl px-5 py-3 font-medium border border-white/10 hover:bg-white/10 backdrop-blur-sm transition"
+          >
+            Fale Conosco
+          </motion.a>
+        </motion.div>
       </motion.div>
       <AnimatePresence mode="wait">
         <motion.div
@@ -81,7 +72,7 @@ const BannerHomePAge: React.FC = () => {
           </div>
         </motion.div>
       </AnimatePresence>
-    </div>
+    </section>
   );
 };
 
