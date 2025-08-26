@@ -36,8 +36,8 @@ const slides: DadosSlides[] = [
 
 const HomeCarousel: React.FC = () => {
   return (
-    <div className="bg-black pb-35">
-      <div className="text-tertiary mb-3 md:w-150 mx-auto border-none p-5">
+    <div className="bg-black pb-30">
+      <div className="text-tertiary mb-3 md:w-150 mx-auto border-none px-5">
         <motion.div
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}

@@ -1,120 +1,59 @@
 import Reveal from "@/pages/shared/components/Reveal";
-import EspecialidadeBox from "./EspecialdadeBox";
-import {
-  BadgeCheckIcon,
-  BriefcaseBusiness,
-  CircuitBoard,
-  Computer,
-  Cpu,
-  HardHat,
-} from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import { motion, useAnimation, useInView } from "motion/react";
-import { useEffect, useRef } from "react";
-import { Button } from "@/components/ui/button";
-import ContatoDialog from "@/pages/shared/components/ContatoDialog";
+import { motion } from "motion/react";
+import { especialidades } from "../data/dados";
 
 const Especialidades: React.FC = () => {
-  const badge1Animation = useAnimation();
-  const badge2Animation = useAnimation();
-
-  const badgeRef = useRef<HTMLDivElement>(null);
-
-  const isInView = useInView(badgeRef, { once: true });
-
-  useEffect(() => {
-    if (isInView) {
-      badge1Animation.start("visible");
-      badge2Animation.start("visible");
-    }
-  }, [isInView, badge1Animation, badge2Animation]);
-
   return (
-    <div className="especialidades-container p-8 background-primary text-center bg-gradient-to-tr from-black via-black to-[#55008f] text-white pb-35">
-      <div className="w-full md:w-170 mx-auto">
-        <Reveal className="mt-50">
-          <h2 className="scroll-m-20 text-2xl font-semibold tracking-tight text-center">
-            Conheça nossas especialidades
-          </h2>
-        </Reveal>
-        <Reveal className="mt-4">
-          <p className="leading-7 [&:not(:first-child)]:mt-8">
-            Nossas especialidades incluem uma variedade de serviços projetados para atender às suas
-            necessidades. Estamos aqui para ajudar você a encontrar a solução perfeita para o seu
-            projeto.
-          </p>
-        </Reveal>
-        <div className="flex flex-wrap gap-5 justify-center mt-5">
-          <motion.div
-            variants={{
-              hidden: { opacity: 0, x: -100 },
-              visible: { opacity: 1, x: 0 },
-            }}
-            initial="hidden"
-            animate={badge1Animation}
-            transition={{ duration: 0.5 }}
-          >
-            <Badge variant={"secondary"} className="bg-green-700 text-white" ref={badgeRef}>
-              {" "}
-              <BadgeCheckIcon /> Qualidade garantida
-            </Badge>
-          </motion.div>
-          <motion.div
-            variants={{
-              visible: { opacity: 1, x: 0 },
-              hidden: { opacity: 0, x: -100 },
-            }}
-            initial="hidden"
-            animate={badge2Animation}
-            transition={{ duration: 0.5 }}
-          >
-            <Badge variant={"secondary"} className="bg-green-700 text-white">
-              {" "}
-              <BadgeCheckIcon /> Preços acessíveis
-            </Badge>
-          </motion.div>
+    <section id="servicos" className="pb-30 bg-gradient-to-tr from-black via-black to-[#55008f]">
+      <div className="max-w-7xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.2 }}
+          className="text-center mb-10 w-fit mx-auto"
+        >
+          <Badge>Nossas áreas de atuação</Badge>
+          <Reveal>
+            <h2 className="mt-3 text-3xl md:text-4xl font-bold text-secondary">Especialidades</h2>
+          </Reveal>
+          <Reveal>
+            <p className="mt-2 text-gray-300 max-w-2xl mx-auto">
+              Lorem ipsum dolor sit amet, consectetur adipdoans odaisdo a sodiasdpakms pamksd
+              kamsdksam daoksn daoknsd oasnkdasdiscing elit.
+            </p>
+          </Reveal>
+        </motion.div>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {especialidades.map((s, i) => (
+            <motion.div
+              key={s.titulo}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: i * 0.06 }}
+              viewport={{ once: true, amount: 0.2 }}
+              className="h-full"
+            >
+              <div className="h-full rounded-2xl background-tertiary/70 border border-white/10 p-6 backdrop-blur-sm hover:bg-white/10 transition-colors">
+                <div className="flex items-center gap-3">
+                  <div className="rounded-xl p-2 bg-white/10">
+                    <s.icone className="h-5 w-5" />
+                  </div>
+                  <Reveal>
+                    <h3 className="text-start text-lg font-semibold">{s.titulo}</h3>
+                  </Reveal>
+                </div>
+                <Reveal>
+                  <p className="text-start mt-2 text-gray-300">{s.descricao}</p>
+                </Reveal>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
-
-      <div className="flex flex-wrap justify-center gap-5 mt-10">
-        <EspecialidadeBox
-          title="Arquitetura e Urbanismo"
-          description="Donec lacinia nisi ut blandit imperdiet. Nulla tempus eget augue non tempor. Mauris ac posuere erat, vel rutrum magna. "
-          icon={<HardHat size={80} color="rgb(219, 184, 38)" />}
-        />
-        <EspecialidadeBox
-          title="Desenvolvimento de tecnologias"
-          description="Duis tellus odio, sagittis in erat in, scelerisque ornare est. "
-          icon={<Computer size={80} color="rgb(219, 184, 38)" />}
-        />
-        <EspecialidadeBox
-          title="Soluções de negócio"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing met, consectetur adipiscingmet, consectetur adipiscingmet, consectetur adipiscing"
-          icon={<BriefcaseBusiness size={80} color="rgb(219, 184, 38)" />}
-        />
-        <EspecialidadeBox
-          title="Máquinas e Equipamentos"
-          description="Duis tellus odio, sagittis in erat inmmet, consectetur adipiscingmet, consectetur adipiscingmet, consectetur adipiscingmet, consectetur adipiscinget, consectetur adipiscingmet, consectetur adipiscing met, consectetur adipiscingmet, consectetur adipiscing, scelerisque ornare est. "
-          icon={<Cpu size={80} color="rgb(219, 184, 38)" />}
-        />
-        <EspecialidadeBox
-          title="Soluções Elétricas"
-          description="Duis tellus odio, sagittis in erat in, scelerisque ornare est. "
-          icon={<CircuitBoard size={80} color="rgb(219, 184, 38)" />}
-          iconColor="rgb(219, 184, 38)" // cor do ícone
-          bgColor="#55008f" // cor do fundo original
-        />
-      </div>
-
-      <div className="mt-15">
-        <h2 className="scroll-m-20 text-1xl font-semibold tracking-tight text-center mb-3">
-          Se interessou? Entre em contato conosco!
-        </h2>
-        <ContatoDialog>
-          <Button variant={"tertiary"}>Enviar mensagem</Button>
-        </ContatoDialog>
-      </div>
-    </div>
+    </section>
   );
 };
 
