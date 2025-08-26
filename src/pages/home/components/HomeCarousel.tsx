@@ -4,35 +4,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { motion } from "motion/react";
-
-interface DadosSlides {
-  imagem: string;
-  titulo: string;
-  subTitulo: string;
-}
-
-const slides: DadosSlides[] = [
-  {
-    imagem: "/src/assets/images/especialidades/arquitetura.jpg",
-    titulo: "Soluções Criativas",
-    subTitulo: "Transformamos ideias em realidade.",
-  },
-  {
-    imagem: "/src/assets/images/especialidades/tecnologia.jpg",
-    titulo: "Tecnologia Inovadora",
-    subTitulo: "Desenvolvemos aplicações e sistemas informatizados que ajudam empresas a crescer.",
-  },
-  {
-    imagem: "/src/assets/images/especialidades/eletronica.jpg",
-    titulo: "Máquinas e Equipamentos que agregam valor",
-    subTitulo: "Aqui projetamos soluções que otimizam processos e aumentam a eficiência.",
-  },
-  {
-    imagem: "/src/assets/images/especialidades/negocios.jpg",
-    titulo: "Fazendo negócios de forma inteligente",
-    subTitulo: "Soluções personalizadas para o seu negócio por meio de consultoria.",
-  },
-];
+import { slidesHome } from "../data/dados";
 
 const HomeCarousel: React.FC = () => {
   return (
@@ -58,7 +30,7 @@ const HomeCarousel: React.FC = () => {
           loop
           className="rounded-2xl overflow-hidden"
         >
-          {slides.map((slide, index) => (
+          {slidesHome.map((slide, index) => (
             <SwiperSlide key={index}>
               <div
                 className="relative h-[400px] flex flex-col justify-center items-center text-white text-center p-8 bg-cover bg-center"
