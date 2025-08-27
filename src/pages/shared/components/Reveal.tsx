@@ -27,7 +27,7 @@ const Reveal: React.FC<Props> = ({
       mainAnimation.start("visible");
       slideAnimation.start("visible");
     }
-  }, [isInView]);
+  }, [isInView, mainAnimation, slideAnimation]);
   return (
     <div className={`relative ${width} overflow-hidden ${className}`}>
       <motion.div

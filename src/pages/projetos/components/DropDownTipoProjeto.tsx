@@ -22,10 +22,10 @@ export function DropDownTipoProjeto({ tipoProjeto, setTipoProjeto }: DropDownTip
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="tertiary">Filtrar Projetos</Button>
+        <Button variant="primary">Filtrar Projetos</Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-56 background-tertiary text-white border-none">
-        <DropdownMenuLabel>Filtre por tipo de projeto</DropdownMenuLabel>
+      <DropdownMenuContent className="w-56 bg-black/75 text-white border-none">
+        <DropdownMenuLabel className="text-center">Filtre por tipo de projeto</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuRadioGroup
           value={tipoProjeto}
