@@ -31,22 +31,40 @@ export function DropDownTipoProjeto({ tipoProjeto, setTipoProjeto }: DropDownTip
           value={tipoProjeto}
           onValueChange={(value) => setTipoProjeto(value as TipoProjeto | "todos")}
         >
-          <DropdownMenuRadioItem className="hover-background-secondary" value="todos">
+          <DropdownMenuRadioItem
+            className="hover-background-secondary cursor-pointer"
+            value="todos"
+          >
             Todos
           </DropdownMenuRadioItem>
-          <DropdownMenuRadioItem className="hover-background-secondary" value="tecnologia">
+          <DropdownMenuRadioItem
+            className="hover-background-secondary cursor-pointer"
+            value="tecnologia"
+          >
             Tecnologia
           </DropdownMenuRadioItem>
-          <DropdownMenuRadioItem className="hover-background-secondary" value="arquitetura">
+          <DropdownMenuRadioItem
+            className="hover-background-secondary cursor-pointer"
+            value="arquitetura"
+          >
             Arquitetura e urbanismo
           </DropdownMenuRadioItem>
-          <DropdownMenuRadioItem className="hover-background-secondary" value="negocios">
+          <DropdownMenuRadioItem
+            className="hover-background-secondary cursor-pointer"
+            value="negocios"
+          >
             Soluções de Negócios
           </DropdownMenuRadioItem>
-          <DropdownMenuRadioItem className="hover-background-secondary" value="maquinas">
+          <DropdownMenuRadioItem
+            className="hover-background-secondary cursor-pointer"
+            value="maquinas"
+          >
             Máquinas e Equipamentos
           </DropdownMenuRadioItem>
-          <DropdownMenuRadioItem className="hover-background-secondary" value="eletrica">
+          <DropdownMenuRadioItem
+            className="hover-background-secondary cursor-pointer"
+            value="eletrica"
+          >
             Soluções Elétricas
           </DropdownMenuRadioItem>
         </DropdownMenuRadioGroup>
