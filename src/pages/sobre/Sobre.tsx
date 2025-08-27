@@ -18,8 +18,6 @@ const Sobre: React.FC = () => {
 
         <LinhaDoTempo />
 
-        <Contato />
-
         <ContatoContainer
           titulo="Pronto para criar algo incrível?"
           descricao="Vamos conversar sobre seu projeto e desenhar um caminho de entrega com previsibilidade e impacto."
