@@ -3,6 +3,7 @@ import { useState } from "react";
 import { DropDownTipoProjeto } from "./components/DropDownTipoProjeto";
 import ListaProjetos from "./components/ListaProjetos";
 import { motion } from "motion/react";
+import ContatoContainer from "../shared/components/ContatoContainer";
 
 const Projetos: React.FC = () => {
   const [tipoProjeto, setTipoProjeto] = useState<TipoProjeto | "todos">("todos");
@@ -27,6 +28,11 @@ const Projetos: React.FC = () => {
       </div>
 
       <ListaProjetos tipoProjeto={tipoProjeto} />
+
+      <ContatoContainer
+        titulo="Faça como outros e tenha também seu projeto realizado por nós!"
+        descricao="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      />
     </section>
   );
 };
