@@ -8,7 +8,7 @@ import { Menu } from "lucide-react";
 
 export function Navbar() {
   return (
-    <header className="w-full border-b shadow-sm px-4 py-2 background-primary border-none">
+    <header className="fixed top-0 left-0 w-full z-50 border-b shadow-sm px-4 py-2 bg-black/40 border-none backdrop-blur-md">
       <div className="max-w-6xl mx-auto flex items-center justify-between border-none">
         {/* Logo */}
         <a href="/">
@@ -59,7 +59,7 @@ export function Navbar() {
           </SheetTrigger>
           <SheetContent
             side="right"
-            className="background-primary border-none [&>button]:text-[#c9a923] "
+            className="background-primary border-none [&>button]:text-[#c9a923]"
           >
             <nav className="space-y-4 flex flex-col items-center mt-20 gap-2">
               <a

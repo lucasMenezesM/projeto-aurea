@@ -9,12 +9,12 @@ const Projetos: React.FC = () => {
 
   return (
     <section id="projetos" className="background-primary text-white py-10">
-      <div className="container">
+      <div className="container pt-25">
         <motion.h1
           initial={{ opacity: 0, y: -50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="scroll-m-20 text-center text-2xl md:text-3xl font-extrabold tracking-tight text-balance"
+          className="scroll-m-20 text-center text-3xl md:text-4xl font-extrabold tracking-tight text-balance"
         >
           Conheça um Pouco dos Trabalhos que Fizeram{" "}
           <motion.span className="text-tertiary underline">Diferença</motion.span> na Vida de Nossos

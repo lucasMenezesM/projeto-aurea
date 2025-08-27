@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 const BannerHomePAge: React.FC = () => {
   return (
     // <div className="banner-home-page grid grid-cols-1 lg:grid-cols-2 justify-items-center border-none items-center bg-gradient-to-br from-black via-black to-[#55008f] py-10 pb-10">
-    <section className="banner-home-page flex flex-wrap justify-center border-none items-center bg-gradient-to-br from-black via-black to-[#55008f] pt-10 pb-30">
+    <section className="banner-home-page flex flex-wrap justify-center border-none items-center bg-gradient-to-br from-black via-black to-[#55008f] pt-25 pb-30">
       <motion.div
         layout
         className="conteudo-banner w-full md:w-160 text-center md:text-left p-8 flex flex-col "
@@ -34,7 +34,7 @@ const BannerHomePAge: React.FC = () => {
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, ease: "easeInOut" }}
-          className="mt-8 flex flex-wrap items-center gap-3"
+          className="mt-8 flex flex-wrap items-center gap-3 justify-center md:justify-start"
         >
           <ContatoDialog>
             <motion.div

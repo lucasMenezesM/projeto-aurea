@@ -10,7 +10,7 @@ const HeroSobre: React.FC = () => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       viewport={{ once: true, amount: 0.2 }}
-      className="text-center max-w-3xl mx-auto mb-16 md:mb-24"
+      className="text-center max-w-3xl mx-auto mb-16 md:mb-24 pt-10"
     >
       <Badge>
         <Rocket className="h-3.5 w-3.5" /> Sobre nós
