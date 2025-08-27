@@ -1,5 +1,8 @@
 import { AnimatePresence, motion } from "motion/react";
 import { ChevronRight } from "lucide-react";
+import ContatoDialog from "@/pages/shared/components/ContatoDialog";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 
 const BannerHomePAge: React.FC = () => {
   return (
@@ -33,23 +36,31 @@ const BannerHomePAge: React.FC = () => {
           transition={{ duration: 0.5, ease: "easeInOut" }}
           className="mt-8 flex flex-wrap items-center gap-3"
         >
-          <motion.a
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            href="#servicos"
-            className="inline-flex items-center justify-center rounded-xl px-5 py-3 font-medium border border-white/10 bg-white/10 hover:bg-white/20 backdrop-blur-sm transition"
+          <ContatoDialog>
+            <motion.div
+              whileTap={{
+                scale: 0.95,
+                rotate: 2,
+                transition: { duration: 0.2, ease: "easeInOut" },
+              }}
+            >
+              <Button className="py-6" variant={"primary"}>
+                Entre em contato
+              </Button>
+            </motion.div>
+          </ContatoDialog>
+          <motion.div
+            whileTap={{
+              scale: 0.95,
+              rotate: 2,
+              transition: { duration: 0.2, ease: "easeInOut" },
+            }}
           >
-            Nossos Serviços
-            <ChevronRight className="ml-1.5 h-4 w-4" />
-          </motion.a>
-          <motion.a
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            href="/contato"
-            className="inline-flex items-center justify-center rounded-xl px-5 py-3 font-medium border border-white/10 hover:bg-white/10 backdrop-blur-sm transition"
-          >
-            Fale Conosco
-          </motion.a>
+            <Button className="p-6" variant={"primary"}>
+              <Link to={"/sobre"}>Siba Mais Sobre Nós</Link>
+              <ChevronRight className="ml-1.5 h-4 w-4" />
+            </Button>
+          </motion.div>
         </motion.div>
       </motion.div>
       <AnimatePresence mode="wait">
