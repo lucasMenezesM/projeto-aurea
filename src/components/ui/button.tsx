@@ -18,7 +18,8 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
         secondary:
           "bg-[#dbb826] text-secondary-foreground shadow-xs hover:bg-[#0e0e0e] hover:text-white cursor-pointer",
-        primary: "bg-[#0e0e0e] text-white hover:bg-[#dbb826] cursor-pointer",
+        primary:
+          "inline-flex items-center justify-center rounded-xl px-5 py-10 font-medium border border-white/10 bg-white/10 hover:bg-white/20 backdrop-blur-sm transition cursor-pointer",
         tertiary: "bg-[#55008f] text-white hover:bg-[#dbb826] hover:text-black cursor-pointer",
       },
       size: {

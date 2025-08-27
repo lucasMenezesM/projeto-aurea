@@ -13,7 +13,7 @@ const HomeCarousel: React.FC = () => {
         <motion.div
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, ease: "easeInOut" }}
+          transition={{ duration: 0.8, ease: "easeInOut" }}
         >
           <h2 className="scroll-m-20 md:text-2xl font-bold tracking-tight text-center border-none">
             O LUGAR CERTO PARA A <span className="text-secondary underline">SOLUÇÃO</span> DO SEU
