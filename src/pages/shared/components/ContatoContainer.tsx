@@ -5,7 +5,21 @@ import { motion } from "motion/react";
 import { useEffect, useRef } from "react";
 import { useAnimation, useInView } from "motion/react";
 
-const ContatoHome: React.FC = () => {
+interface ContatoContainerProps {
+  titulo: string;
+  descricao: string;
+  visible?: { opacity: number; x: number };
+  hidden?: { opacity: number; x: number };
+  textoBotao?: string;
+}
+
+const ContatoContainer: React.FC<ContatoContainerProps> = ({
+  titulo,
+  descricao,
+  visible = { opacity: 1, x: 0 },
+  hidden = { opacity: 0, x: -50 },
+  textoBotao = "Entre em contato",
+}) => {
   const ref = useRef<HTMLDivElement>(null);
   const contatoAnimation = useAnimation();
   const isInView = useInView(ref, { once: true });
@@ -20,8 +34,8 @@ const ContatoHome: React.FC = () => {
     <section className="pb-30">
       <motion.div
         variants={{
-          hidden: { opacity: 0, x: -50 },
-          visible: { opacity: 1, x: 0 },
+          hidden: hidden,
+          visible: visible,
         }}
         initial="hidden"
         transition={{ duration: 1.2, ease: "easeInOut" }}
@@ -32,12 +46,8 @@ const ContatoHome: React.FC = () => {
         <CardGradient>
           <div className="p-6 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
             <div>
-              <h3 className="text-2xl md:text-3xl font-bold text-tertiary">
-                Pronto para conversar sobre seu projeto?
-              </h3>
-              <p className="mt-1 text-gray-300 max-w-xl">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              </p>
+              <h3 className="text-2xl md:text-3xl font-bold text-tertiary">{titulo}</h3>
+              <p className="mt-1 text-gray-300 max-w-xl">{descricao}</p>
             </div>
             <ContatoDialog>
               <motion.div
@@ -48,7 +58,7 @@ const ContatoHome: React.FC = () => {
                 }}
               >
                 <Button className="py-6" variant={"primary"}>
-                  Entre em contato
+                  {textoBotao}
                 </Button>
               </motion.div>
             </ContatoDialog>
@@ -59,4 +69,4 @@ const ContatoHome: React.FC = () => {
   );
 };
 
-export default ContatoHome;
+export default ContatoContainer;
