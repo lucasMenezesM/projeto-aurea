@@ -3,7 +3,6 @@ import Diferenciais from "./components/Diferenciais";
 import HeroSobre from "./components/Hero";
 import MVV from "./components/MVV";
 import LinhaDoTempo from "./components/LinhaDoTempo";
-import Contato from "./components/Contato";
 import ContatoContainer from "../shared/components/ContatoContainer";
 
 const Sobre: React.FC = () => {
