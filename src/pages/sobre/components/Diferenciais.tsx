@@ -31,9 +31,9 @@ const Diferenciais: React.FC = () => {
         </motion.div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {diferenciais.map((f, i) => (
+          {diferenciais.map((diferencial, i) => (
             <motion.div
-              key={f.title}
+              key={diferencial.titulo}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeOut", delay: i * 0.08 }}
@@ -43,11 +43,11 @@ const Diferenciais: React.FC = () => {
               <div className="h-full rounded-2xl background-tertiary/70 border border-white/10 p-6 backdrop-blur-sm hover:bg-white/10 transition-colors">
                 <div className="flex items-center gap-3">
                   <div className="rounded-xl p-2 bg-white/10">
-                    <f.Icon className="h-5 w-5" />
+                    <diferencial.icone className="h-5 w-5" />
                   </div>
-                  <h3 className="text-lg font-semibold">{f.title}</h3>
+                  <h3 className="text-lg font-semibold">{diferencial.titulo}</h3>
                 </div>
-                <p className="mt-2 text-gray-300">{f.desc}</p>
+                <p className="mt-2 text-gray-300">{diferencial.descricao}</p>
               </div>
             </motion.div>
           ))}

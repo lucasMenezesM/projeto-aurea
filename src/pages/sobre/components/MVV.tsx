@@ -6,9 +6,9 @@ const MVV: React.FC = () => {
   return (
     <section className="mb-20">
       <motion.div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {dadosMVV.map((v, i) => (
+        {dadosMVV.map((dado, i) => (
           <motion.div
-            key={v.title}
+            key={dado.titulo}
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut", delay: i * 0.08 }}
@@ -18,11 +18,11 @@ const MVV: React.FC = () => {
               <div className="p-6 md:p-7 min-h-50 h-fit flex flex-col">
                 <div className="flex items-center gap-3">
                   <div className="rounded-xl p-2 bg-white/10">
-                    <v.Icon className="h-5 w-5 text-secondary" />
+                    <dado.icone className="h-5 w-5 text-secondary" />
                   </div>
-                  <h3 className="text-xl font-semibold text-secondary">{v.title}</h3>
+                  <h3 className="text-xl font-semibold text-secondary">{dado.titulo}</h3>
                 </div>
-                <p className="mt-3 text-gray-200 leading-relaxed">{v.desc}</p>
+                <p className="mt-3 text-gray-200 leading-relaxed">{dado.descricao}</p>
               </div>
             </CardGradient>
           </motion.div>
