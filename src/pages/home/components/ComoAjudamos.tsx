@@ -1,4 +1,4 @@
-import CardGradient from "@/pages/sobre/components/CardGradient";
+import CardGradient from "@/pages/shared/components/CardGradient";
 import { motion, useAnimation, useInView } from "motion/react";
 import Badge from "@/pages/shared/components/Badge";
 import Reveal from "@/pages/shared/components/Reveal";

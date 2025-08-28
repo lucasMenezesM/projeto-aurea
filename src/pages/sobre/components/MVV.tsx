@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import CardGradient from "./CardGradient";
+import CardGradient from "../../shared/components/CardGradient";
 import { dadosMVV } from "../dados";
 
 const MVV: React.FC = () => {

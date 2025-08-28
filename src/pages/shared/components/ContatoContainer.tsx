@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import ContatoDialog from "@/pages/shared/components/ContatoDialog";
-import CardGradient from "@/pages/sobre/components/CardGradient";
+import CardGradient from "@/pages/shared/components/CardGradient";
 import { motion } from "motion/react";
 import { useEffect, useRef } from "react";
 import { useAnimation, useInView } from "motion/react";
