@@ -3,6 +3,7 @@ import { motion } from "motion/react";
 import { diferenciais } from "../dados";
 
 import Badge from "@/pages/shared/components/Badge";
+import Reveal from "@/pages/shared/components/Reveal";
 
 const Diferenciais: React.FC = () => {
   return (
@@ -13,16 +14,20 @@ const Diferenciais: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true, amount: 0.2 }}
-          className="text-center mb-10"
+          className="text-center mb-10 w-fit mx-auto"
         >
           <Badge>Nossos diferenciais</Badge>
-          <h2 className="mt-3 text-3xl md:text-4xl font-bold text-secondary">
-            Por que empresas nos escolhem
-          </h2>
-          <p className="mt-2 text-gray-300 max-w-2xl mx-auto">
-            Combinamos visão de produto, engenharia sólida e uma cultura de parceria para entregar
-            valor sustentável.
-          </p>
+          <Reveal>
+            <h2 className="mt-3 text-3xl md:text-4xl font-bold text-secondary">
+              Por que empresas nos escolhem
+            </h2>
+          </Reveal>
+          <Reveal>
+            <p className="mt-2 text-gray-300 max-w-2xl mx-auto">
+              Combinamos visão de produto, engenharia sólida e uma cultura de parceria para entregar
+              valor sustentável.
+            </p>
+          </Reveal>
         </motion.div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">

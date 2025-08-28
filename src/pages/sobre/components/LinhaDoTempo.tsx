@@ -2,6 +2,7 @@ import { motion } from "motion/react";
 import Badge from "@/pages/shared/components/Badge";
 import { Lightbulb, Rocket, Shield } from "lucide-react";
 import { passos } from "../dados";
+import Reveal from "@/pages/shared/components/Reveal";
 
 const LinhaDoTempo: React.FC = () => {
   return (
@@ -11,12 +12,14 @@ const LinhaDoTempo: React.FC = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
         viewport={{ once: true, amount: 0.2 }}
-        className="text-center mb-10"
+        className="text-center mb-10 w-fit mx-auto"
       >
         <Badge>Como trabalhamos</Badge>
-        <h2 className="mt-3 text-3xl md:text-4xl font-bold text-secondary">
-          Processo simples, impacto alto
-        </h2>
+        <Reveal>
+          <h2 className="mt-3 text-3xl md:text-4xl font-bold text-secondary">
+            Processo simples, impacto alto
+          </h2>
+        </Reveal>
       </motion.div>
 
       <div className="relative max-w-4xl mx-auto">
