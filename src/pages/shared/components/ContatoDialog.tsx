@@ -28,7 +28,10 @@ const formSchema = z.object({
   mensagem: z.string().min(10, "A mensagem precisa ter pelo menos 10 caracteres"),
   telefone: z
     .string()
-    .regex(/^(\(\d{2}\)\s?\d{5}-\d{4})$/, "Formato inválido. Use (XX) XXXXX-XXXX"),
+    .regex(
+      /^(\(\d{2}\)\s?\d{5}-\d{4}|\d{2}\s?\d{5}-\d{4}|\d{11}|\d{2}\s\d{9})$/,
+      "Formato inválido. Use (XX) XXXXX-XXXX"
+    ),
 });
 
 type FormData = z.infer<typeof formSchema>;
@@ -129,7 +132,7 @@ const ContatoDialog = ({ children }: Props) => {
                   Cancelar
                 </Button>
               </DialogClose>
-              <Button type="submit" variant={"tertiary"}>
+              <Button type="submit" className="bg-green-700 hover:bg-green-900 cursor-pointer">
                 Enviar
               </Button>
             </DialogFooter>
