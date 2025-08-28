@@ -28,9 +28,9 @@ const LinhaDoTempo: React.FC = () => {
           className="absolute left-4 top-0 bottom-0 w-px bg-gradient-to-b from-white/0 via-white/20 to-white/0"
         />
         <ul className="space-y-8">
-          {passos.map((s, i) => (
+          {passos.map((passo, i) => (
             <motion.li
-              key={s.title}
+              key={passo.titulo}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeOut", delay: i * 0.08 }}
@@ -42,8 +42,8 @@ const LinhaDoTempo: React.FC = () => {
                 {i === 1 && <Rocket className="h-4 w-4" />}
                 {i === 2 && <Shield className="h-4 w-4" />}
               </span>
-              <h3 className="text-lg font-semibold text-white">{s.title}</h3>
-              <p className="text-gray-300">{s.desc}</p>
+              <h3 className="text-lg font-semibold text-white">{passo.titulo}</h3>
+              <p className="text-gray-300">{passo.descricao}</p>
             </motion.li>
           ))}
         </ul>

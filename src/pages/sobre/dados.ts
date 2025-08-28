@@ -10,92 +10,105 @@ import {
   Handshake,
 } from "lucide-react";
 
-type Diferencial = {
-  title: string;
-  desc: string;
-  Icon: React.ComponentType<{ className?: string }>;
-};
+interface Diferencial {
+  titulo: string;
+  descricao: string;
+  icone: React.ComponentType<{ className?: string }>;
+}
 
-type Passo = { title: string; desc: string };
+interface Passo {
+  titulo: string;
+  descricao: string;
+}
 
-type MVV = {
-  title: string;
-  desc: string;
-  Icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
-};
+interface MVV {
+  titulo: string;
+  descricao: string;
+  icone: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+}
 
-type DadoHero = { label: string; value: string };
+interface DadoHero {
+  titulo: string;
+  valor: string;
+}
 
 const dadosHero: DadoHero[] = [
-  { label: "Projetos entregues", value: "+120" },
-  { label: "Satisfação média", value: "98%" },
-  { label: "Anos de experiência", value: "7+" },
-  { label: "Clientes ativos", value: "30+" },
+  { titulo: "Projetos entregues", valor: "+120" },
+  { titulo: "Satisfação média", valor: "98%" },
+  { titulo: "Anos de experiência", valor: "7+" },
+  { titulo: "Clientes ativos", valor: "30+" },
 ];
 
 const dadosMVV: MVV[] = [
   {
-    title: "Missão",
-    desc: "Nossa missão é formar empreendedores de impacto através do jeito Aureano de ser.",
-    Icon: Target,
+    titulo: "Missão",
+    descricao: "Nossa missão é formar empreendedores de impacto através do jeito Aureano de ser.",
+    icone: Target,
   },
   {
-    title: "Visão",
-    desc: "Nossa visão até 2025 é ser o Elo entre a região Norte e o Sucesso, formando, através da constância de resultados, os líderes que levarão a Aurea para o Alto Impacto.",
-    Icon: Eye,
+    titulo: "Visão",
+    descricao:
+      "Nossa visão até 2025 é ser o Elo entre a região Norte e o Sucesso, formando, através da constância de resultados, os líderes que levarão a Aurea para o Alto Impacto.",
+    icone: Eye,
   },
   {
-    title: "Valores",
-    desc: "Apaixonado, Unido, Responsável, Empático, Audacioso, Notável, Obstinado",
-    Icon: Handshake,
+    titulo: "Valores",
+    descricao: "Apaixonado, Unido, Responsável, Empático, Audacioso, Notável, Obstinado",
+    icone: Handshake,
   },
 ];
 
 const passos: Passo[] = [
   {
-    title: "Descoberta",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi erat est, efficitur ac accumsan eu, commodo in nisi. Maecenas lobortis tortor aliquam, euismod eros suscipit, mattis dui. ",
+    titulo: "descricaooberta",
+    descricao:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi erat est, efficitur ac accumsan eu, commodo in nisi. Maecenas lobortis tortor aliquam, euismod eros suscipit, mattis dui. ",
   },
   {
-    title: "Desenho da solução",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi erat est, efficitur ac accumsan eu, commodo in nisi. Maecenas lobortis tortor aliquam",
+    titulo: "Desenho da solução",
+    descricao:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi erat est, efficitur ac accumsan eu, commodo in nisi. Maecenas lobortis tortor aliquam",
   },
   {
-    title: "Entrega e evolução",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi erat est, efficitur ac accumsan eu, commodo in nisi. ",
+    titulo: "Entrega e evolução",
+    descricao:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi erat est, efficitur ac accumsan eu, commodo in nisi. ",
   },
 ];
 
 const diferenciais: Diferencial[] = [
   {
-    title: "Inovação prática",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.  ",
-    Icon: Sparkles,
+    titulo: "Inovação prática",
+    descricao: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.  ",
+    icone: Sparkles,
   },
   {
-    title: "Qualidade e segurança",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi erat est, efficitur ac accumsan eu, commodo in nisi. Maecenas ",
-    Icon: Shield,
+    titulo: "Qualidade e segurança",
+    descricao:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi erat est, efficitur ac accumsan eu, commodo in nisi. Maecenas ",
+    icone: Shield,
   },
   {
-    title: "Entrega ágil",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    Icon: Clock,
+    titulo: "Entrega ágil",
+    descricao: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    icone: Clock,
   },
   {
-    title: "UX orientada a dados",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi erat est, efficitur ac accumsan eu",
-    Icon: Lightbulb,
+    titulo: "UX orientada a dados",
+    descricao:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi erat est, efficitur ac accumsan eu",
+    icone: Lightbulb,
   },
   {
-    title: "Parceria verdadeira",
-    desc: "Lorem ipsum dolor sit amet, consectetur ",
-    Icon: Users,
+    titulo: "Parceria verdadeira",
+    descricao: "Lorem ipsum dolor sit amet, consectetur ",
+    icone: Users,
   },
   {
-    title: "Suporte contínuo",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi erat est, efficitur ac accumsan eu, commodo in nisi. Maecenas lobortis tortor aliquam. ",
-    Icon: CheckCircle2,
+    titulo: "Suporte contínuo",
+    descricao:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi erat est, efficitur ac accumsan eu, commodo in nisi. Maecenas lobortis tortor aliquam. ",
+    icone: CheckCircle2,
   },
 ];
 

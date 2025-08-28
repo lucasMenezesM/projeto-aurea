@@ -25,17 +25,17 @@ const HeroSobre: React.FC = () => {
 
       {/* Mini métricas no hero */}
       <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-4">
-        {dadosHero.map((s, i) => (
+        {dadosHero.map((dado, i) => (
           <motion.div
-            key={s.label}
+            key={dado.titulo}
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut", delay: i * 0.08 }}
             viewport={{ once: true, amount: 0.2 }}
             className="rounded-xl border border-white/10 bg-white/5 py-4 px-3 backdrop-blur-sm"
           >
-            <p className="text-2xl font-semibold text-white">{s.value}</p>
-            <p className="text-xs text-gray-300">{s.label}</p>
+            <p className="text-2xl font-semibold text-white">{dado.valor}</p>
+            <p className="text-xs text-gray-300">{dado.titulo}</p>
           </motion.div>
         ))}
       </div>
