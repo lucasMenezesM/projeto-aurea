@@ -42,7 +42,7 @@ const Footer: React.FC = () => {
             </p>
             <div className="mt-5">
               <ContatoDialog>
-                <Button variant={"tertiary"}>
+                <Button variant={"primary"}>
                   <Headset /> Enviar Mensagem
                 </Button>
               </ContatoDialog>

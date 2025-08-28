@@ -1,6 +1,6 @@
 import React from "react";
 import Diferenciais from "./components/Diferenciais";
-import HeroSobre from "./components/Hero";
+import HeroSobre from "./components/HeroSobre";
 import MVV from "./components/MVV";
 import LinhaDoTempo from "./components/LinhaDoTempo";
 import ContatoContainer from "../shared/components/ContatoContainer";
