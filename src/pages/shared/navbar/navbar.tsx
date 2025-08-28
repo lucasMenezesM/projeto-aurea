@@ -3,7 +3,13 @@ import {
   NavigationMenuList,
   NavigationMenuItem,
 } from "@/components/ui/navigation-menu";
-import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetTrigger,
+  SheetContent,
+  SheetTitle,
+  SheetDescription,
+} from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 
 export function Navbar() {
@@ -39,14 +45,6 @@ export function Navbar() {
                 Projetos
               </a>
             </NavigationMenuItem>
-            <NavigationMenuItem>
-              <a
-                href="/membros"
-                className="text-lg text-secondary hover-text-white transition-colors"
-              >
-                Membros
-              </a>
-            </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
 
@@ -61,7 +59,13 @@ export function Navbar() {
             side="right"
             className="background-primary border-none [&>button]:text-[#c9a923]"
           >
-            <nav className="space-y-4 flex flex-col items-center mt-20 gap-2">
+            <SheetTitle className="text-2xl font-bold text-secondary text-center mt-20">
+              Menu
+            </SheetTitle>
+            <SheetDescription className="text-center mb-5 text-xl font-bold text-tertiary">
+              Seja Bem Vindo!
+            </SheetDescription>
+            <nav className="space-y-4 flex flex-col items-center gap-2">
               <a
                 href="/"
                 className="block text-lg font-medium text-secondary border-2 border-solid border-[#c9a923] px-5 py-2 rounded-md w-50 text-center"
@@ -79,12 +83,6 @@ export function Navbar() {
                 className="block text-lg font-medium text-secondary border-2 border-solid border-[#c9a923] px-5 py-2 rounded-md w-50 text-center"
               >
                 Projetos
-              </a>
-              <a
-                href="/contato"
-                className="block text-lg font-medium text-secondary border-2 border-solid border-[#c9a923] px-5 py-2 rounded-md w-50 text-center"
-              >
-                Contato
               </a>
             </nav>
           </SheetContent>
