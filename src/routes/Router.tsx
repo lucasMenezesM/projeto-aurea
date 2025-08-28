@@ -1,6 +1,5 @@
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Home from "../pages/home/Home";
-import Membros from "../pages/membros/Membros";
 import Sobre from "../pages/sobre/Sobre";
 import { Navbar } from "@/pages/shared/navbar/navbar";
 import Footer from "@/pages/shared/footer/footer";
@@ -12,7 +11,6 @@ export const Router: React.FC = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/membros" element={<Membros />} />
         <Route path="/sobre" element={<Sobre />} />
         <Route path="/projetos" element={<Projetos />} />
       </Routes>

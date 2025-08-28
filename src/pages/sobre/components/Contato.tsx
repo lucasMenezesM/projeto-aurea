@@ -1,4 +1,4 @@
-import CardGradient from "./CardGradient";
+import CardGradient from "../../shared/components/CardGradient";
 import ContatoDialog from "@/pages/shared/components/ContatoDialog";
 import { Button } from "@/components/ui/button";
 
