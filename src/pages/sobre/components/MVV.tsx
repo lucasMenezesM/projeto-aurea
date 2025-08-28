@@ -5,7 +5,7 @@ import { dadosMVV } from "../dados";
 const MVV: React.FC = () => {
   return (
     <section className="mb-20">
-      <motion.div className="grid md:grid-cols-3 gap-6">
+      <motion.div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {dadosMVV.map((v, i) => (
           <motion.div
             key={v.title}
@@ -15,7 +15,7 @@ const MVV: React.FC = () => {
             viewport={{ once: true, amount: 0.2 }}
           >
             <CardGradient>
-              <div className="p-6 md:p-7 h-50 flex flex-col">
+              <div className="p-6 md:p-7 min-h-50 h-fit flex flex-col">
                 <div className="flex items-center gap-3">
                   <div className="rounded-xl p-2 bg-white/10">
                     <v.Icon className="h-5 w-5 text-secondary" />
